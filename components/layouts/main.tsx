@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { Box, Container } from '@chakra-ui/react'
-import { IMain } from '../../Interfaces/Main/IMain'
+import { IMain } from '../../Interfaces/IMain'
 import { FC } from 'react'
+import Navbar from '../NavBar'
 
 const Main: FC<IMain> = ({ children, router }) => {
   return (
@@ -22,6 +23,7 @@ const Main: FC<IMain> = ({ children, router }) => {
         <meta property="og:image" content="https://twitter.com/JosueRetamozo/photo" />
         <title>Josue Retamozo - Homepage</title>
       </Head>
+      <Navbar path={router?.asPath as string} />
       <Container maxW="container.md" pt={14}>
         {children}
       </Container>
